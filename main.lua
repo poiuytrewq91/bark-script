@@ -159,7 +159,7 @@ local Library do
         ["Equals"]            = "=",
         ["At"]                = "@",
         ["LeftBracket"]       = "LeftBracket",
-        ["RightBracket"]      = "LeftBracked",
+        ["RightBracket"]      = "RightBracked",
         ["BackSlash"]         = "BackSlash",
         ["Caret"]             = "^",
         ["Underscore"]        = "_",
@@ -226,20 +226,20 @@ local Library do
     end
 
     
-	for Index, Value in pairs(Library.Images) do
-	    local ImageData = Value
-	
-	    local ImageName = ImageData[1]
-	    local ImageLink = ImageData[2]
-	    
-	    if not isfile(Library.Folders.Assets .. "/" .. ImageName) then
-	        local ok, err = pcall(function()
-	            local success, data = pcall(game.HttpGet, game, ImageLink)
-	            if not success or not data then return end
-	            writefile(Library.Folders.Assets .. "/" .. ImageName, data)
-	        end)
-	    end
-	end
+for Index, Value in pairs(Library.Images) do
+    local ImageData = Value
+
+    local ImageName = ImageData[1]
+    local ImageLink = ImageData[2]
+    
+    if not isfile(Library.Folders.Assets .. "/" .. ImageName) then
+        local ok, err = pcall(function()
+            local success, data = pcall(game.HttpGet, game, ImageLink)
+            if not success or not data then return end
+            writefile(Library.Folders.Assets .. "/" .. ImageName, data)
+        end)
+    end
+end
 
     
     local Tween = { } do
